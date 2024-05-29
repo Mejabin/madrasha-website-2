@@ -45,7 +45,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md h-36 content-center text-2xl">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center relative">
         <div className="flex items-center space-x-2">
           <FaMosque className="text-2xl text-green-600" />
@@ -58,14 +58,12 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex space-x-6 items-center">
-          
           {navItems.map((item, index) => (
             <React.Fragment key={index}>
               {item.items ? (
-                
                 <DropdownButton label={item.label} items={item.items} />
               ) : (
-                // If it's a regular link
+               
                 <a
                   href={item.href}
                   className="font-semibold text-gray-600 hover:text-green-600"
@@ -83,7 +81,7 @@ const Navbar = () => {
 
         {/* Search bar */}
         {showSearch && (
-          <div className="absolute top-full left-0 w-full bg-green-500 shadow-lg border rounded-lg mt-1">
+          <div className="absolute top-full left-0 w-full bg-green-500 shadow-lg border rounded-lg mt-1 z-50">
             <input
               type="text"
               placeholder="Search..."
